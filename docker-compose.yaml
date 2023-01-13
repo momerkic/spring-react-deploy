@@ -1,5 +1,13 @@
 services:
   backend:
+    deploy:
+      resources:
+        limits:
+          cpus: 0.35
+          memory: 256M
+        reservations:
+          cpus: 0.25
+          memory: 128M
     build:
       context: backend
     ports:
@@ -14,6 +22,14 @@ services:
       SERVER_PORT: 8080
       AUCTION_APP_JWTSECRET: "${AUCTION_APP_JWTSECRET}"
   ui:
+    deploy:
+      resources:
+        limits:
+          cpus: 0.35
+          memory: 512M
+        reservations:
+          cpus: 0.25
+          memory: 256M
     build:
       context: frontend
     ports:
@@ -23,6 +39,14 @@ services:
     restart: always
   db:
     image: postgres:13.9
+    deploy:
+      resources:
+        limits:
+          cpus: 0.30
+          memory: 128M
+        reservations:
+          cpus: 0.25
+          memory: 64M
     restart: always
     environment:
       POSTGRES_USER: admin

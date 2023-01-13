@@ -11,5 +11,5 @@ jobs:
         env:
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           AUCTION_APP_JWTSECRET: ${{ secrets.AUCTION_APP_JWTSECRET }}
-        run: docker-compose up -d --build
+        run: docker-compose up -d --build && docker system prune -f
         shell: bash
