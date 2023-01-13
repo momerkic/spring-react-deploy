@@ -33,7 +33,7 @@ services:
     build:
       context: frontend
     ports:
-      - "8090:3000"
+      - "8090:4200"
     depends_on:
       - backend
     restart: always
