@@ -3,10 +3,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.35
+          cpus: '0.35'
           memory: 256M
         reservations:
-          cpus: 0.25
+          cpus: '0.25'
           memory: 128M
     build:
       context: backend
@@ -25,10 +25,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.35
+          cpus: '0.35'
           memory: 512M
         reservations:
-          cpus: 0.25
+          cpus: '0.25'
           memory: 256M
     build:
       context: frontend
@@ -42,10 +42,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.30
+          cpus: '0.30'
           memory: 128M
         reservations:
-          cpus: 0.25
+          cpus: '0.25'
           memory: 64M
     restart: always
     environment:
